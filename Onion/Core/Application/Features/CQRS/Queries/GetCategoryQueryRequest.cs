@@ -1,7 +1,12 @@
-﻿using MediatR;
-using MyMapProject.Core.Application.Dto;
+﻿using Application.Dto;
+using MediatR;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace MyMapProject.Core.Application.Features.CQRS.Queries
+namespace Application.Features.CQRS.Queries
 {
     public class GetCategoryQueryRequest : IRequest<CategoryListDto?>
     {
