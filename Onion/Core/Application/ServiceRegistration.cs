@@ -20,9 +20,11 @@ namespace Application
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddAutoMapper(opt =>
             {
-                opt.AddProfiles(new List<Profile> 
-                { 
-                    new CategoryProfile()
+                opt.AddProfiles(new List<Profile>
+                {
+                    new CategoryProfile(),
+                    new LocationProfile(),
+                    new UserProfile()
                 });
             });
         }

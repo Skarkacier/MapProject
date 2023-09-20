@@ -21,12 +21,21 @@ namespace Application.Features.CQRS.Handlers
 
         public async Task<Unit> Handle(UpdateCategoryCommandRequest request, CancellationToken cancellationToken)
         {
+            //CONNECTED
             var updatedEntity = await this.repository.GetByIdAsync(request.Id);
             if (updatedEntity != null)
             {
                 updatedEntity.Definition = request.Definition;
-                await this.repository.UpdateAsync(updatedEntity);
+                await this.repository.SaveChangesAsync();
             }
+
+            //DISCONNECTED
+            //var updatedCategory = new Category()
+            //{
+            //    Definition = request.Definition,
+            //    Id = request.Id,
+            //};
+            //await this.repository.UpdateAsync(updatedCategory);
             return Unit.Value;
         }
     }

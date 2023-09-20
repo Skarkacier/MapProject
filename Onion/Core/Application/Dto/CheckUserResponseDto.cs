@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Entities
+namespace Application.Dto
 {
-    public class User
+    public class CheckUserResponseDto
     {
         public int Id { get; set; }
         public string? Username { get; set; }
-        public string? Password { get; set; }
-        public int UserRoleId { get; set; }
-        public UserRole? UserRole { get; set; }
+        public string? Role { get; set; }
+        public bool IsExist { get; set; }
     }
 }
